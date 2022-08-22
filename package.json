@@ -1,7 +1,7 @@
 {
-  "name": "express-auth-mongoose-boilerplate",
+  "name": "recipe-app",
   "version": "1.0.0",
-  "description": "Auth boilerplate for mongoose express using token auth",
+  "description": "Recipe app built with mongoose express using token auth",
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
