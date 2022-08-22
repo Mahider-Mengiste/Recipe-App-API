@@ -22,7 +22,7 @@ const recipeSchema = new Schema(
 		},
         comments: [commentSchema],
         // String type
-        description: {
+        Ingredient: {
          	type: String,
             required: true
         }
