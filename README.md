@@ -54,18 +54,18 @@ PATCH| /change-password | allows users to change their password |
 Verb| Route | Description |
 ---| ----- | ----------- |
 GET| /view-all-recipes | allows user to view all recipes|
-GET| /view-recipe | allows user to view a recipe |
-POST| /create-recipe | allows user to create new recipe of their account |
-PATCH| /edit-recipe | allows user to update recipe|
-DELETE| /delete-recipe | allows user to delete recipe|
+GET| /view-recipe:id | allows user to view a recipe |
+POST| /create-recipe:id | allows user to create new recipe of their account |
+PATCH| /edit-recipe:id | allows user to update recipe|
+DELETE| /delete-recipe:id | allows user to delete recipe|
 
 ### comment route table
 
 Verb| Route | Description |
 ---| ----- | ----------- |
-POST| /create-comment | allows user to create new comment|
-PATCH| /edit-comment | allows user to update comment|
-DELETE| /delete-comment | allows user to delete comment|
+POST| /create-comment:id | allows user to create new comment|
+PATCH| /edit-comment:id | allows user to update comment|
+DELETE| /delete-comment:id | allows user to delete comment|
 
 
 ## ERD
