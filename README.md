@@ -55,7 +55,7 @@ Verb| Route | Description |
 ---| ----- | ----------- |
 GET| /view-all-recipes | allows user to view all recipes|
 GET| /view-recipe:id | allows user to view a recipe |
-POST| /create-recipe:id | allows user to create new recipe of their account |
+POST| /create-recipe | allows user to create new recipe of their account |
 PATCH| /edit-recipe:id | allows user to update recipe|
 DELETE| /delete-recipe:id | allows user to delete recipe|
 
@@ -63,7 +63,7 @@ DELETE| /delete-recipe:id | allows user to delete recipe|
 
 Verb| Route | Description |
 ---| ----- | ----------- |
-POST| /create-comment:id | allows user to create new comment|
+POST| /create-comment | allows user to create new comment|
 PATCH| /edit-comment:id | allows user to update comment|
 DELETE| /delete-comment:id | allows user to delete comment|
 
