@@ -67,8 +67,8 @@ app.use(requestLogger)
 
 // register route files
 
-app.use(userRoutes)
 app.use(recipeRoutes)
+app.use(userRoutes)
 app.use(commentRoutes)
 
 
