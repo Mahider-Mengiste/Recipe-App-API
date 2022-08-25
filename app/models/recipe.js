@@ -10,6 +10,10 @@ const { Schema, model } = mongoose
 
 const recipeSchema = new Schema(
     {
+        recipeCreater: {
+            type: String,
+            required: true
+        },
         // String type
         recipeName: {
             type: String,
@@ -25,7 +29,11 @@ const recipeSchema = new Schema(
         Ingredient: {
          	type: String,
             required: true
-        }
+        },
+        owner: {
+			type: Schema.Types.ObjectId,
+			ref: 'User'
+		}
     }, {
         timestamps: true,
     }

@@ -32,6 +32,7 @@ const router = express.Router()
 router.get('/view-all-recipes', (req, res, next) => {
 	// we want everyone to see the recipes, whether they're logged in or not.
 	// if we wanted to protect these resources, then we can add that middleware back in. and we would place it between the route and the callback function.(second argument)
+	console.log(Recipe.find())
 	Recipe.find()
 		.populate('owner')
 		.then((recipes) => {
@@ -51,6 +52,7 @@ router.get('/view-all-recipes', (req, res, next) => {
 // GET /view-recipe/:id
 router.get('/view-recipe/:id', (req, res, next) => {
 	// req.params.id will be set based on the `:id` in the route
+	// console.log(mongoose.Types.ObjectId.isValid(id))
 	Recipe.findById(req.params.id)
 		.populate('owner')
 		.then(handle404)
