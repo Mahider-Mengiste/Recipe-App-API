@@ -4,6 +4,7 @@
   "description": "Recipe app built with mongoose express using token auth",
   "main": "server.js",
   "scripts": {
+    "seed": "node app/models/seed.js",
     "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

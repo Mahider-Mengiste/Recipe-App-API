@@ -2,7 +2,7 @@ const express = require('express')
 const passport = require('passport')
 
 // pull in Mongoose model for pets
-const Recipe = require('../models/recipe')
+const Recipe = require('../models/comment')
 
 const customErrors = require('../../lib/custom_errors')
 

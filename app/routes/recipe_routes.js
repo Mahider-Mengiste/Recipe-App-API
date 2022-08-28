@@ -67,7 +67,7 @@ router.get('/view-recipe/:id', (req, res, next) => {
 router.post('/create-recipe', requireToken, (req, res, next) => {
 	// set owner of new recipe to be current user
 	req.body.recipe.owner = req.user.id
-
+	console.log("this is ---------------", req.body.Recipe)
 	Recipe.create(req.body.recipe)
 		// respond to succesful `create` with status 201 and JSON of new "recipe"
 		.then((recipe) => {
@@ -117,6 +117,38 @@ router.delete('/delete-recipe/:id', requireToken, (req, res, next) => {
 		.then(() => res.sendStatus(204))
 		// if an error occurs, pass it to the handler
 		.catch(next)
+})
+
+
+router.put('/update-like',requireToken, (req, res) => {
+	console.log("this is post id", postId)
+    Recipe.findByIdAndUpdate(req.body.postId), {
+        $push:{likes:req.user._id}
+    }, {
+		new: true
+	}.exec((err, result)=>{
+		if(err){
+			return res.status(422).json({error:err})
+		}else{
+			res.json(result)
+		}
+
+	})
+})
+
+router.put('/delete-like',requireToken, (req, res) => {
+    Recipe.findByIdAndUpdate(req.body.postId), {
+        $pull:{likes:req.user._id}
+    }, {
+		new: true
+	}.exec(()=>{
+		if(err){
+			return res.status(422).json({error:err})
+		}else{
+			res.json(result)
+		}
+
+	})
 })
 
 module.exports = router
