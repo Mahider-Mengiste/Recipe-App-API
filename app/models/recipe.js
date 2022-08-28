@@ -32,7 +32,10 @@ const recipeSchema = new Schema(
 			required: true
 		},
         comments: [commentSchema],
-        likes: [{type:ObjectId,ref:"User"}],
+        // likes: {
+        // type: Array,
+        // default: [],
+        // },
         // String type
         Ingredient: {
          	type: String,

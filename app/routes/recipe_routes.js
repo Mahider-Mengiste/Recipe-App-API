@@ -119,36 +119,21 @@ router.delete('/delete-recipe/:id', requireToken, (req, res, next) => {
 		.catch(next)
 })
 
+// //like / dislike a recipe
+// router.put("/:id/like", async (req, res) => {
+//   try {
+//     const recipe = await Recipe.findById(req.params.id);
+//     if (!recipe.likes.includes(req.body.userId)) {
+//       await recipe.updateOne({ $push: { likes: req.body.owner } });
+//       res.status(200).json("The post has been liked");
+//     } else {
+//       await recipe.updateOne({ $pull: { likes: req.body.owner } });
+//       res.status(200).json("The post has been disliked");
+//     }
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
-router.put('/update-like',requireToken, (req, res) => {
-	console.log("this is post id", postId)
-    Recipe.findByIdAndUpdate(req.body.postId), {
-        $push:{likes:req.user._id}
-    }, {
-		new: true
-	}.exec((err, result)=>{
-		if(err){
-			return res.status(422).json({error:err})
-		}else{
-			res.json(result)
-		}
-
-	})
-})
-
-router.put('/delete-like',requireToken, (req, res) => {
-    Recipe.findByIdAndUpdate(req.body.postId), {
-        $pull:{likes:req.user._id}
-    }, {
-		new: true
-	}.exec(()=>{
-		if(err){
-			return res.status(422).json({error:err})
-		}else{
-			res.json(result)
-		}
-
-	})
-})
 
 module.exports = router
