@@ -9,14 +9,18 @@ const commentSchema = require('./comment')
 const { Schema, model } = mongoose
 
 const recipeSchema = new Schema(
-    {
-        recipeCreater: {
+    {   
+        recipeCreator: {
             type: String,
             required: true
         },
         // String type
         recipeName: {
             type: String,
+            required: true
+        },
+        recipeType: {
+            type: String, 
             required: true
         },
         // String type
@@ -26,7 +30,7 @@ const recipeSchema = new Schema(
 		},
         comments: [commentSchema],
         // String type
-        Ingredient: {
+        Instruction: {
          	type: String,
             required: true
         },
