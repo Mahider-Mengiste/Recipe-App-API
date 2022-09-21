@@ -18,4 +18,6 @@ const localDb = process.env.TESTENV ? database.test : database.development
 // heroku production evironment otherwise use test or development db
 const currentDb = process.env.MONGODB_URI || localDb
 
+// mongodb+srv://mahider12345:mahider12345@recipetap-api.wwgnfkd.mongodb.net/recipetap?retryWrites=true&w=majority
+
 module.exports = currentDb
